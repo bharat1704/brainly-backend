@@ -46,8 +46,7 @@ app.get("/api/v1/signin", async(req,res)=>{
         }
 
         else{
-        const token = jwt.sign({existingUser}, Secret_key)
-        console.log("token is " + token);    
+        const token = jwt.sign({existingUser}, Secret_key)    
         res.json({ token:token})
         }
 })

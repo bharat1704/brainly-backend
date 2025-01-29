@@ -1,12 +1,7 @@
-<h1 align="center">Welcome to brainly 👋</h1>
-<p>
-  <a href="https://www.npmjs.com/package/brainly" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/brainly.svg">
-  </a>
-  <a href="#" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
-  </a>
-</p>
+# Welcome to brainly 👋
+
+[![Version](https://img.shields.io/npm/v/brainly.svg)](https://www.npmjs.com/package/brainly)
+[![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](#)
 
 ## Install
 
@@ -17,6 +12,3 @@ npm install
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
