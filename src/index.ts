@@ -1,19 +1,20 @@
 import express from "express";
 const app = express();
 import jwt from "jsonwebtoken"
-import {UserModel} from "./db"
+import {ContentModel, UserModel} from "./db"
+import { userMiddlware } from "./middleware";
 
-const Secret_key = "hi bharat";
+import { Secret_key } from "./config";
+
 
 
 app.use(express.json());
-//@ts-ignore
+
 
 // sign up end point
 app.post("/api/v1/signup", async (req,res)=>{
     const username = req.body.username;
     const password = req.body.password;
-
 
 try {  
         await UserModel.create({
@@ -53,10 +54,23 @@ app.get("/api/v1/signin", async(req,res)=>{
 
 //content end point
 
-app.post("/api/v1/content",function(req,res){
+app.post("/api/v1/content" ,userMiddlware, async (req, res)=>{
+const {title, link} = req.body;
 
-    res.send("hi there")
+await ContentModel.create({
+    title,
+    link,
+    //@ts-ignore
+    userId:req.userId,
+    // tags:[]
+
+})    
+res.json({msg: "content added"})
+
 })
+
+
+
 
 app.post("/api/v1/brain/share",function(req,res){
 

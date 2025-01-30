@@ -11,16 +11,16 @@ const userSchema = new Schema({
 })
 
 
-// const contentType = ['image', 'article', 'audio', 'video']
+const contentType = ['image', 'article', 'audio', 'video']
 
-// const contentSchema = new Schema({
-//     title: String,
-//     link: String,
-//     tags: [{type: mongoose.Types.ObjectId, ref:'tag'}],
-//     type: {type:String, enum:contentType, required: true},
-//     userId: {type:mongoose.Types.ObjectId, ref:'User',required: true, unique:true }
+const contentSchema = new Schema({
+    title: String,
+    link: String,
+    // tags: [{type: mongoose.Types.ObjectId, ref:'tag'}],
+    // type: {type:String, enum:contentType, required: true},
+    // userId: {type:mongoose.Types.ObjectId, ref:'User',required: true, unique:true }
 
-//     })
+    })
 
 //     const tagSchema = new Schema({
 //         title:String
@@ -34,7 +34,7 @@ const userSchema = new Schema({
 
 
     export const UserModel = model('User', userSchema );
-    // export const ContentModel = mongoose.model('Content', 'contentSchema');
+    export const ContentModel = mongoose.model('Content', contentSchema);
     // export const TagModel = mongoose.model('Tag', 'tagSchema');
     // export const LinkModel = mongoose.model('Link', 'linkSchema')
 
